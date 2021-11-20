@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: hsla(188, 36%, 90%, 1);
+}
+
+header {
+    background-color: hsla(359, 85%, 56%, 1);  
+    height: 10vh;
+}
+
+header h1{
+    margin: auto auto;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    font-size: 7vh;
+}
+
+
+
+/* Main ------------------------------------------------------ */
+
+main{
+    background-color: hsla(177, 61%, 29%, 1);
+    border: 5px solid hsla(189, 66%, 8%, 1);
+    border-radius: 50px;
+
+    position: relative;
+    top: 0;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+
+    width: 50vw;
+    height: 80vh;
+    max-width: 1200px;
+    min-width: 700px;
+}
+
+main canvas{
+    box-sizing: content-box;
+    position: relative;
+    width: 100%;
+    height: 60vh;
+
+    background-color: ivory;
+    border-bottom: 5px solid black;
+    border-radius: 49px 49px 0px 0px;
+}
+
+
+main .userMenu{
+    width: 100%;
+    height: 20vh;
+    content: "";
+    display: table;
+    clear: both;
+    font-family: 'Asap', sans-serif;
+}
+
+main .inputSubmit, .eOptions, .mOptions {
+    /*border: 5px solid black; */
+    float: left;
+    width: 33.33%;
+}
+
+main .inputSubmit #emInput{
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 2vh;
+
+    width: 70%;
+
+    position: relative;
+    left: 1%;
+}
+
+main .inputSubmit #submitButton{
+    border: 1px solid black;
+    border-radius: 5px;
+
+    text-align: center;
+    font-size: 2vh;
+
+    padding: 0px 10px;
+    margin-top: 3%;
+
+    position: relative;
+    left: 1%;
+
+    cursor: pointer;
+}
+
+#submitButton:hover{
+    background-color: chocolate;
+    color: white;
+}
+
+#submitButton:active{
+    transform: translateY(4px);
+}
+
+/* Footer ---------------------------------------------------- */
+
+footer{
+    background-color: hsla(359, 85%, 56%, 1);
+    position: static;
+    margin: 0;
+    height: 5vh;
+}
+
+.title {
+    font-size: 2.5vw;
+    text-align: center;
+    max-height: 100;
+}
+
+.canvasStyle{
+    border:1px solid #000000;
+    position: fixed;
+    left: 50%;
+    width: 25vw;
+    height: 25vw;
+}
