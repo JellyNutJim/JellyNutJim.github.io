@@ -42,7 +42,7 @@ main{
     min-width: 700px;
 }
 
-main canvas{
+main .canvasHolder{
     box-sizing: content-box;
     position: relative;
     width: 100%;
@@ -118,12 +118,4 @@ footer{
     font-size: 2.5vw;
     text-align: center;
     max-height: 100;
-}
-
-.canvasStyle{
-    border:1px solid #000000;
-    position: fixed;
-    left: 50%;
-    width: 25vw;
-    height: 25vw;
 }
