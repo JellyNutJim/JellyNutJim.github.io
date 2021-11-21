@@ -68,7 +68,6 @@ function displayElement2D(Symbol, atmoicNum, atomicWeight){
         if (i == 0){
             if (electronStructure[i] > 0){
                 drawCircle(mWidth, mHeight - 80, 15, "yellow");
-                dr
             }
             if (electronStructure[i] > 1){
                 drawCircle(mWidth, mHeight + 80, 15, "yellow");
