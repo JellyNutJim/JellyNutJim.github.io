@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: hsla(188, 36%, 90%, 1);
+}
+
+header {
+    background-color: hsla(359, 85%, 56%, 1);  
+    height: 10vh;
+}
+
+header h1{
+    margin: auto auto;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    font-size: 7vh;
+}
