@@ -1,3 +1,10 @@
+function checkBroswerPlatform(){
+    const isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobile/));
+    console.log(isMobile);
+}
+
+
+
 //This function will set the canvas size equal to its parent element ('canvasHolder')
 //Called whenever a change in window size is detected
 window.addEventListener('resize', function(event){

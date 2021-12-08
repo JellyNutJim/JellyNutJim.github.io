@@ -151,8 +151,16 @@ function bohrMain(userInput){
     //Get values.
 
     //Temp values of sodium.
-    var atmoicNum = 11;
-    var atomicWeight = 23;
+    if (userInput == "Fe")
+    {
+        var atmoicNum = 56;
+        var atomicWeight = 26;
+    
+    }
+    else{
+        var atmoicNum = 11;
+        var atomicWeight = 23;
+    }
 
     protons = atmoicNum;
     electrons = atmoicNum;
