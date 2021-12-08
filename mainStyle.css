@@ -20,10 +20,6 @@ header h1{
     font-size: 7vh;
 }
 
-header h1, #credits_Btn{
-    display: inline-block;    
-}
-
 
 
 /* Main ------------------------------------------------------ */
