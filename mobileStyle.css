@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    background-color: hsla(177, 61%, 29%, 1);
+}
+main .canvasHolder{
+    background-color: hsla(188, 36%, 90%, 1);
+    width: 100vw;
+    height: 75vh;
+    border: black solid 5px;
+}
+
+
+
+main .userMenu{
+    width: 100%;
+    height: 20vh;
+    content: "";
+    display: table;
+    clear: both;
+    font-family: 'Asap', sans-serif;
+}
+
+main .inputSubmit, .eOptions, .mOptions {
+    /*border: 5px solid black; */
+    float: left;
+    width: 33.33%;
+}
+
+main .inputSubmit #emInput{
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 2vh;
+
+    width: 70%;
+
+    position: relative;
+    left: 1%;
+}
+
+main .inputSubmit #submitButton{
+    border: 1px solid black;
+    border-radius: 5px;
+
+    text-align: center;
+    font-size: 2vh;
+
+    padding: 0px 10px;
+    margin-top: 3%;
+
+    position: relative;
+    left: 1%;
+
+    cursor: pointer;
+}
+
+#submitButton:hover{
+    background-color: chocolate;
+    color: white;
+}
+
+#submitButton:active{
+    transform: translateY(4px);
+}
