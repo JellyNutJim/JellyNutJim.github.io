@@ -1,6 +1,7 @@
 function checkBroswerPlatform(){
     const isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobile/));
     console.log(isMobile);
+    initializeDisplay();
 }
 
 
