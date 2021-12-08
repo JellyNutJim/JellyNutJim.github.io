@@ -162,7 +162,7 @@ function bohrMain(userInput){
 
     //Pre load images into variables
     protonImage.src = 'proton.png';
-    electronImage.src = 'Electron.png' //temp capital
+    electronImage.src = 'Electron.png' //temp capital letter
 
     window.requestAnimationFrame(displayElement2D);
     return [false, "Run Succesfull"];
