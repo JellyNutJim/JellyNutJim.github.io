@@ -9,6 +9,10 @@ function checkBroswerPlatform(){
     initializeDisplay();
 }
 
+function switchToWebPage(fileName){
+    document.location=filename;   
+}
+
 
 
 //This function will set the canvas size equal to its parent element ('canvasHolder')
