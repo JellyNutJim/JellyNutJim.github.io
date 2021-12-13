@@ -10,6 +10,7 @@ function checkBroswerPlatform(){
 }
 
 function switchToWebPage(fileName){
+    console.log(filename);
     document.location=filename;   
 }
 
