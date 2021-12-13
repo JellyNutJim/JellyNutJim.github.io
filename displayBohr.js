@@ -84,7 +84,6 @@ function displayElement2D(){
     for (var i = 0; i < electronShells; i++){
         drawCircle(0, 0, shellWidth * (i + 1), "rgba(255, 255, 255, 0)");
         dBohr.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
-        for (var e = 0; e < electronStructure[i]; e++){
             console.log("test" + e);
             switch (electronStructure[i]){
                 case 1:
@@ -135,7 +134,6 @@ function displayElement2D(){
                     break;
                 default:
                     break;
-            }
         }
     }
     window.requestAnimationFrame(displayElement2D);
