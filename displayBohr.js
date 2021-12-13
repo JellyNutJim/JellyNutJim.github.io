@@ -84,7 +84,7 @@ function displayElement2D(){
     for (var i = 0; i < electronShells; i++){
         drawCircle(0, 0, shellWidth * (i + 1), "rgba(255, 255, 255, 0)");
         dBohr.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
-            console.log("test" + e);
+            console.log("ham");
             switch (electronStructure[i]){
                 case 1:
                     dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
