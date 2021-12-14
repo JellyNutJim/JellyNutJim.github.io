@@ -9,7 +9,7 @@ function checkBroswerPlatform(){
     initializeDisplay();
 }
 
-function switchPage(fileName){
+function switchPage(filename){
     console.log(filename);
     document.location=filename;   
 }
