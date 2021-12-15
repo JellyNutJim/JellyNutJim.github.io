@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="mobileStyle.css">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
-        <script src="display.js"></script>
-        <script src="displayBohr.js"></script>
-        <script src="interpret.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/desktopStyle.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon.ico">
+        <script src="Js/algorithmMenu.js"></script>
+        <script src="Js/interpret.js"></script>
+
+        <!-- Loads in the possible algorithms that can be called-->
+        <script src="Js/Algorithms/displayBohr.js"></script>
+
         <link href="https://fonts.googleapis.com/css2?family=Asap&family=Lato&family=Montserrat&family=Space+Mono&family=Ubuntu&display=swap" rel="stylesheet">
         <title>Element Lab</title>
-    <head>
-
-
-    <!--The mobile browser version will have no header or footer, therefore only the <body> element is needed-->
-    <main>
-        <body>
+    </head>
+    
+    <body onload="initializeDisplay()">
+        <header>
+            <h1>Element Lab</h1>
+        </header>
+            
+        <main>
             <!-- The main bulk of the website will be split into two parts, the canvas and the interface-->
             <!--The canvas-->
-            <section class = "canvasHolder">
-                <canvas id = "displayCanvas">
+            <section class="canvasHolder">
+                <canvas id="displayCanvas">
             </section>
+            
+            <!-- The main user interface, including all options -->
 
             <section class="userMenu">
                 <form onsubmit="return emDisplay()">
@@ -45,6 +52,11 @@
 
                     <label for="d-3D">Display 3D</label>
                     <input type="radio" id="d-3D" name="emOption" value="d-3D">
+                    <br>
+                    
+                    <label for="to-temp">How to use</label>
+                    <br>
+                    <button type="button" id="to-temp" onclick="return switchPage('temp.html')">Instructions</button>
 
                 </section>
 
@@ -70,9 +82,12 @@
                     <input type="radio" id="d-skeletal" name="emOption" value="d-skeletal">
                     <br>
 
-                </section>
+                </section>                                  
                 </form>
             </section>
-        </body>
-    </main>
+
+            <!-- This div makes sure that when a user first enters the page, the bohr's model algorithm will run-->
+
+        </main>
+    </body>
 </html>

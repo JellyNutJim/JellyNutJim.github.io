@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="CSS/mobileStyle.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon.ico">
+        <script src="Js/algorithmMenu.js"></script>
+        <script src="Js/interpret.js"></script>
+
+        <!-- Loads in the possible algorithms that can be called-->
+        <script src="Js/Algorithms/displayBohr.js"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Asap&family=Lato&family=Montserrat&family=Space+Mono&family=Ubuntu&display=swap" rel="stylesheet">
+        <title>Element Lab</title>
+    <head>
+
+
+    <!--The mobile browser version will have no header or footer, therefore only the <body> element is needed-->
+    <main>
+        <body>
+            <!-- The main bulk of the website will be split into two parts, the canvas and the interface-->
+            <!--The canvas-->
+            <section class = "canvasHolder">
+                <canvas id = "displayCanvas">
+            </section>
+
+            <section class="userMenu">
+                <form onsubmit="return emDisplay()">
+                
+                <!-- Main user em input + submit button -->
+                <section class="inputSubmit">
+                    <h1>Enter Element/Molecules:</h1>
+                    <br>
+
+                    <input type="text" id="emInput" name="emInput" Value="Na">
+                    <br>
+
+                    <button type="button" id="submitButton" onclick="return initializeDisplay()">Submit</button>
+                </section>
+
+                <!-- User options for displaying elements -->
+                <section class="eOptions">
+                    <h1>Element Options:</h1>
+                    <br>
+
+                    <label for="d-Bohr">Display Bohr</label>
+                    <input type="radio" id="d-Bohr" name="emOption" value="d-Bohr" checked="checked">
+                    <br>
+
+                    <label for="d-3D">Display 3D</label>
+                    <input type="radio" id="d-3D" name="emOption" value="d-3D">
+
+                </section>
+
+                <!-- User options for displaying molecules -->
+                <!-- Will include explanations.-->
+                <section class="mOptions">
+                    <h1>Molecule Options</h1>
+                    <br>
+
+                    <label for="d-displayed">Displayed Formula</label>
+                    <input type="radio" id="d-displayed" name="emOption" value="d-displayed">
+                    <br>
+
+                    <label for="d-bonding">Bonding Display</label>
+                    <input type="radio" id="d-bonding" name="emOption" value="d-bonding">
+                    <br>
+                    
+                    <label for="d-hydrocarbon">Hydrocarbon Displayed</label>
+                    <input type="radio" id="d-hydrocarbon" name="emOption" value="d-hydrocarbon">
+                    <br>
+
+                    <label for="d-skeletal">Skeletal Formula</label>
+                    <input type="radio" id="d-skeletal" name="emOption" value="d-skeletal">
+                    <br>
+
+                </section>
+                </form>
+            </section>
+        </body>
+    </main>
+</html>

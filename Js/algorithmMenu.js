@@ -1,20 +1,12 @@
-function checkBroswerPlatform(){
-    const isMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobile/));
-    if (isMobile != false){
-        console.log("mobile detected");
-        document.location='mobileIndex.html';
-    } else{
-        console.log("computer detected");
-    }
-    initializeDisplay();
-}
+//The following file contains the code that will accept a user input and pass
+//those values to the appropriate visual display algorithm.
 
+
+//Can be called at anytime to switch the current page to the one specified in the argument.
 function switchPage(filename){
     console.log(filename);
     document.location=filename;   
 }
-
-
 
 //This function will set the canvas size equal to its parent element ('canvasHolder')
 //Called whenever a change in window size is detected
@@ -51,6 +43,8 @@ function initializeDisplay(){
             displayOption = radioOptions[i].value;
         }
     }
+
+    console.log("bruh");
     
     //Call the appropriate function based on user's choice.
     var error;

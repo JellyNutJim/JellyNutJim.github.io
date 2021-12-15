@@ -168,8 +168,8 @@ function bohrMain(userInput){
     electronShells = getBohrElectronStructure(electrons)[1]; //E.g.  4 shells
 
     //Pre load images into variables
-    protonImage.src = 'proton.png';
-    electronImage.src = 'Electron.png' //temp capital letter
+    protonImage.src = 'Assets/proton.png';
+    electronImage.src = 'Assets/electron.png';
 
     window.requestAnimationFrame(displayElement2D);
     return [false, "Run Succesfull"];
