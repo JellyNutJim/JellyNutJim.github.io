@@ -43,8 +43,6 @@ function initializeDisplay(){
             displayOption = radioOptions[i].value;
         }
     }
-
-    console.log("bruh");
     
     //Call the appropriate function based on user's choice.
     var error;
@@ -53,7 +51,7 @@ function initializeDisplay(){
             error = bohrMain(userInput);
             break;
     }
-
+    
     //temp error displayer
     if (error[0] == true){
         console.log(error[1]);

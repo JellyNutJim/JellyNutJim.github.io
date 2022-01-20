@@ -50,6 +50,11 @@ function displayElement2D(){
     //Find canvas element and define drawing tool.
     var canvas = document.getElementById("displayCanvas");
     var dBohr = canvas.getContext("2d");
+
+    //Value determines if the animation will run.
+    var animate = document.getElementById("d-Bohr-Animate").checked;
+    console.log(animate);
+
     dBohr.restore();
     dBohr.save();
     dBohr.clearRect(0, 0, canvas.width, canvas.height);
@@ -83,11 +88,15 @@ function displayElement2D(){
     //Draw shells and electrons
     for (var i = 0; i < electronShells; i++){
         drawCircle(0, 0, shellWidth * (i + 1), "rgba(255, 255, 255, 0)");
-        dBohr.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
-            console.log("ham");
+
+        if (animate)
+        {
+            dBohr.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
+        }
+
             switch (electronStructure[i]){
                 case 1:
-                    dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                    dBohr.drawImage(electronImage, eOrigin, (shellWidth * -(i + 1)) - (electronSize / 2), electronSize, electronSize);
                     break;
                 case 2:
                     dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
@@ -172,6 +181,7 @@ function bohrMain(userInput){
     electronImage.src = 'Assets/electron.png';
 
     window.requestAnimationFrame(displayElement2D);
+
     return [false, "Run Succesfull"];
 }
 
