@@ -21,6 +21,31 @@ window.addEventListener('resize', function(event){
     initializeDisplay();
 });
 
+//Returns the current user display option.
+function getCurrentRadioOption(){  
+    //Search radioOptions array for the checked radio, then save the chosen value.
+    for (var i = 0; i < radioOptions.length; i++){
+        if (radioOptions[i].checked){
+            displayOption = radioOptions[i].value;
+        }
+    }
+    
+    return displayOption;
+}
+
+//Checks if the selected button has been changed.
+//This function is used in animation loops to see if the loop must be broken.
+function checkSelectedTrue(currentActiveOption){
+    var currentSelectedOption = getCurrentRadioOption();
+    
+    if currentSelectedOption = currentActiveOption(){
+        return true;
+    }
+    else{
+        return false;   
+    }
+}
+
 //Takes the users inputs, and calls the appropriate functions based on said input.
 function initializeDisplay(){
     //Define user values
