@@ -38,7 +38,7 @@ function getCurrentRadioOption(){
 function checkSelectedTrue(currentActiveOption){
     var currentSelectedOption = getCurrentRadioOption();
     
-    if currentSelectedOption = currentActiveOption(){
+    if currentSelectedOption == currentActiveOption(){
         return true;
     }
     else{
