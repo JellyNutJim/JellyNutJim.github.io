@@ -87,64 +87,74 @@ function displayElement2D(){
 
     //Draw shells and electrons
     for (var i = 0; i < electronShells; i++){
+        //Draw the electron shells.
         drawCircle(0, 0, shellWidth * (i + 1), "rgba(255, 255, 255, 0)");
-
+        
+        //Changes the initial rotation on all the shells each time DisplayElement2D is called.
+        //The if statement will only be true if the check box on the main page is active. (true by default)
         if (animate)
         {
             dBohr.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
         }
-
-            switch (electronStructure[i]){
-                case 1:
-                    dBohr.drawImage(electronImage, eOrigin, (shellWidth * -(i + 1)) - (electronSize / 2), electronSize, electronSize);
-                    break;
-                case 2:
+        
+        //Takes in the electron structure at position [i] and compares it agaisnt 8 different possibilities.
+        //Displays the correct amount of electrons on the appropriate shell.
+        
+        switch (electronStructure[i]){
+            case 1:
+                dBohr.drawImage(electronImage, eOrigin, (shellWidth * -(i + 1)) - (electronSize / 2), electronSize, electronSize);
+                break;
+            case 2:
+                dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                dBohr.drawImage(electronImage, eOrigin, (-shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                break;
+            case 3:
+                dBohr.drawImage(electronImage, 0 - (electronSize / 2), (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                dBohr.rotate(120*Math.PI/180);
+                dBohr.drawImage(electronImage, 0 - (electronSize / 2), (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                dBohr.rotate(-240*Math.PI/180);
+                dBohr.drawImage(electronImage, 0 - (electronSize / 2), (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                dBohr.rotate(120*Math.PI/180);
+                break;
+            case 4:
+                for (var r = 0; r < 4; r++){
                     dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                    dBohr.drawImage(electronImage, eOrigin, (-shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                    break;
-                case 3:
-                    dBohr.drawImage(electronImage, 0 - (electronSize / 2), (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                    dBohr.rotate(120*Math.PI/180);
-                    dBohr.drawImage(electronImage, 0 - (electronSize / 2), (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                    dBohr.rotate(-240*Math.PI/180);
-                    dBohr.drawImage(electronImage, 0 - (electronSize / 2), (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                    dBohr.rotate(120*Math.PI/180);
-                    break;
-                case 4:
-                    for (var r = 0; r < 4; r++){
-                        dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                        dBohr.rotate(90*Math.PI/180);
-                    }
-                    break;
-                case 5:
-                    for (var r = 0; r < 5; r++){
-                        dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                        dBohr.rotate(72*Math.PI/180);
-                    }
-                    break;
-                case 6:
-                    for (var r = 0; r < 6; r++){
-                        dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                        dBohr.rotate(60*Math.PI/180);
-                    }
-                    break;
-                case 7:
-                    for (var r = 0; r < 7; r++){
-                        dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                        dBohr.rotate(51*Math.PI/180);
-                    }
-                    dBohr.rotate(3*Math.PI/180);
-                    break;
-                case 8:
-                    for (var r = 0; r < 8; r++){
-                        dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
-                        dBohr.rotate(45*Math.PI/180);
-                    }
-                    break;
-                default:
-                    break;
+                    dBohr.rotate(90*Math.PI/180);
+                }
+                break;
+            case 5:
+                for (var r = 0; r < 5; r++){
+                    dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                    dBohr.rotate(72*Math.PI/180);
+                }
+                break;
+            case 6:
+                for (var r = 0; r < 6; r++){
+                    dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                    dBohr.rotate(60*Math.PI/180);
+                }
+                break;
+            case 7:
+                for (var r = 0; r < 7; r++){
+                    dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                    dBohr.rotate(51*Math.PI/180);
+                }
+                dBohr.rotate(3*Math.PI/180);
+                break;
+            case 8:
+                for (var r = 0; r < 8; r++){
+                    dBohr.drawImage(electronImage, eOrigin, (shellWidth * (i + 1)) - (electronSize / 2), electronSize, electronSize);
+                    dBohr.rotate(45*Math.PI/180);
+                }
+                break;
+            default:
+                break;
         }
     }
+    
+    
+    
+    //Re-calls the function using animation frames.
     window.requestAnimationFrame(displayElement2D);
 }
 
