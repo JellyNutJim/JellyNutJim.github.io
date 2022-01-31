@@ -22,7 +22,7 @@ window.addEventListener('resize', function(event){
 });
 
 //Returns the current user display option.
-function getCurrentRadioOption(){  
+function getCurrentRadioOption(radioOptions){  
     //Search radioOptions array for the checked radio, then save the chosen value.
     for (var i = 0; i < radioOptions.length; i++){
         if (radioOptions[i].checked){
@@ -38,7 +38,7 @@ function getCurrentRadioOption(){
 function checkSelectedTrue(currentActiveOption){
     var currentSelectedOption = getCurrentRadioOption();
     
-    if currentSelectedOption == currentActiveOption{
+    if (currentSelectedOption == currentActiveOption){
         return true;
     }
     else{
@@ -63,11 +63,7 @@ function initializeDisplay(){
     canvas.setAttribute('height', pheight);
 
     //Search radioOptions array for the checked radio, then save the chosen value.
-    for (var i = 0; i < radioOptions.length; i++){
-        if (radioOptions[i].checked){
-            displayOption = radioOptions[i].value;
-        }
-    }
+    displayOption = getCurrentRadioOption(radioOptions);
     
     //Call the appropriate function based on user's choice.
     var error;
@@ -83,4 +79,3 @@ function initializeDisplay(){
     }
     console.log(error[1]);
 }
-
