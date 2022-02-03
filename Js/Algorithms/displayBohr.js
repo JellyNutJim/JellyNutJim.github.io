@@ -53,7 +53,6 @@ function displayElement2D(){
 
     //Value determines if the animation will run.
     var animate = document.getElementById("d-Bohr-Animate").checked;
-    console.log(animate);
 
     dBohr.restore();
     dBohr.save();
