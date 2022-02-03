@@ -60,7 +60,10 @@ function displayElement2D(){
     dBohr.clearRect(0, 0, canvas.width, canvas.height);
 
     //Using the time to animate the electrons.
-    time = new Date();
+    if (animate)
+    {
+        time = new Date();
+    }
    
     var canvasWidth = canvas.width;
     var canvasHeight = canvas.height;
@@ -92,10 +95,9 @@ function displayElement2D(){
         
         //Changes the initial rotation on all the shells each time DisplayElement2D is called.
         //The if statement will only be true if the check box on the main page is active. (true by default)
-        if (animate)
-        {
-            dBohr.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
-        }
+        
+        dBohr.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
+        
         
         //Takes in the electron structure at position [i] and compares it agaisnt 8 different possibilities.
         //Displays the correct amount of electrons on the appropriate shell.
