@@ -7,44 +7,44 @@ class PDataBase
   //[2] is the element'ss mass number.
   //[3] tells us whether the element is a metal or not. 
   
-  var elements = [['H', 1, 1, false], //Start of period 1.
-                  ['He', 2, 4, false], 
-                  ['Li', 3, 6.9, true], //Start of period 2.
-                  ['Be', 4, 9, true],
-                  ['B', 5, 10.8, false],
-                  ['C', 6, 12, false],
-                  ['N', 7, 14, false],
-                  ['O', 8, 16, false],
-                  ['F', 9, 19, false],
-                  ['Ne', 10, 20.2, false], 
-                  ['Na', 11, 23, true], //Start of period 3.
-                  ['Mg', 12, 24.3, true],
-                  ['Al', 13, 27, true],
-                  ['Si', 14, 28.1, false],
-                  ['P', 15, 31, false],
-                  ['S', 16, 32.1, false],
-                  ['Cl', 17, 35.5, false],
-                  ['Ar', 18, 39.9, false], 
-                  ['K', 19, 39.1, true], //Start of period 4.
-                  ['Ca', 20, 40.1, true],
-                  ['Sc', 21, 45, true],
-                  ['Ti', 22, 47.9, true],
-                  ['V', 23, 50.9, true],
-                  ['Cr', 24, 52, true],
-                  ['Mn', 25, 54.9, true],
-                  ['Fe', 26, 55.8, true],
-                  ['Co', 27, 58.9, true],
-                  ['Ni', 28, 58.7, true],
-                  ['Cu', 29, 63.5, true],
-                  ['Zn', 30, 65.4, true],
-                  ['Ga', 31, 69.7, true],
-                  ['Ge', 32, 72.6, true],
-                  ['As', 33, 74.9, false],
-                  ['Se', 34, 79, false],
-                  ['Br', 35, 79.9, false],
-                  ['Kr', 36, 83.8, false], //
-                  ['Rb', 37, 85.5, true], //Start of period 5.
-                  ['Sr', 38, 87.6, true],
+  var elements = [['H', 'hydrogen', 1, 1, false], //Start of period 1.
+                  ['He','helium', 2, 4, false], 
+                  ['Li', 'lithium', 3, 6.9, true], //Start of period 2.
+                  ['Be', 'beryllium', 4, 9, true],
+                  ['B', 'boron', 5, 10.8, false],
+                  ['C', 'carbon', 6, 12, false],
+                  ['N', 'nitrogen', 7, 14, false],
+                  ['O', 'oxygen', 8, 16, false],
+                  ['F', 'fluorine', 9, 19, false],
+                  ['Ne', 'neon', 10, 20.2, false], 
+                  ['Na', 'sodium', 11, 23, true], //Start of period 3.
+                  ['Mg', 'magnesium', 12, 24.3, true],
+                  ['Al', 'aluminium', 13, 27, true],
+                  ['Si', 'silicon', 14, 28.1, false],
+                  ['P', 'phosphorus', 15, 31, false],
+                  ['S', 'sulfur', 16, 32.1, false],
+                  ['Cl', 'chlorine', 17, 35.5, false],
+                  ['Ar', 'argon', 18, 39.9, false], 
+                  ['K', 'potassium', 19, 39.1, true], //Start of period 4.
+                  ['Ca', 'calcium', 20, 40.1, true],
+                  ['Sc', 'scandium', 21, 45, true],
+                  ['Ti', 'titanium', 22, 47.9, true],
+                  ['V', 'vanadium', 23, 50.9, true],
+                  ['Cr', 'chromium', 24, 52, true],
+                  ['Mn', 'manganese', 25, 54.9, true],
+                  ['Fe', 'iron', 26, 55.8, true],
+                  ['Co', 'cobalt', 27, 58.9, true],
+                  ['Ni', 'nickel', 28, 58.7, true],
+                  ['Cu', 'copper', 29, 63.5, true],
+                  ['Zn', 'zinc', 30, 65.4, true],
+                  ['Ga', 'gallium, '31, 69.7, true],
+                  ['Ge', 'germanium', 32, 72.6, true],
+                  ['As', 'arsenic', 33, 74.9, false],
+                  ['Se', 'selenium', 34, 79, false],
+                  ['Br', 'bromine', 35, 79.9, false],
+                  ['Kr', 'krypton', 36, 83.8, false], //
+                  ['Rb', 'rubidium', 37, 85.5, true], //Start of period 5.
+                  ['Sr', 'strontium', 38, 87.6, true],
                   ['Y', 39, 88.9, true],
                   ['Zr', 40, 91.2, true],
                   ['Nb', 41, 92.9, true],
