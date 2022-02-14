@@ -1,9 +1,7 @@
 //Checks whether an element is valid or not
 function checkValidElement(userInput){
 
-    if (userInput == "Na" || userInput == "Fe"){
-        return true;
-    }
+    console.log(elements[0][0]);
 
     return false;
 }
