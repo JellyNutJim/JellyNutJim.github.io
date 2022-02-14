@@ -82,7 +82,7 @@ class PDataBase
                   ['Ta', 'tantalum', 73, 180.9, true],
                   ['W', 'tungsten', 74, 183.8, true],
                   ['Re', 'rhenium', 75, 186.2, true],
-                  ['Os', 'osmium', 76, 190.2 true],
+                  ['Os', 'osmium', 76, 190.2, true],
                   ['Ir', 'iridium', 77, 192.2, true],
                   ['Pt', 'platinum', 78, 195.1, true],
                   ['Au', 'gold', 79, 197, true],
