@@ -37,7 +37,7 @@ class PDataBase
                   ['Ni', 'nickel', 28, 58.7, true],
                   ['Cu', 'copper', 29, 63.5, true],
                   ['Zn', 'zinc', 30, 65.4, true],
-                  ['Ga', 'gallium, '31, 69.7, true],
+                  ['Ga', 'gallium', 31, 69.7, true],
                   ['Ge', 'germanium', 32, 72.6, true],
                   ['As', 'arsenic', 33, 74.9, false],
                   ['Se', 'selenium', 34, 79, false],
