@@ -96,7 +96,7 @@ class PDataBase
                   ['Fr', 'francium', 87, 223, true], //Start of period 7.
                   ['Ra', 'radium', 88, 226, true],
                   ['Ac', 'actinium', 89, 227, true],
-                  ['Th' 'thorium', 90, 232, true], //Start of Actinides (90 - 103).
+                  ['Th', 'thorium', 90, 232, true], //Start of Actinides (90 - 103).
                   ['Pa', 'protactinium', 91, 231, true],
                   ['U', 'uranium', 92, 238, true],
                   ['Np', 'neptunium', 93, 247, true],
