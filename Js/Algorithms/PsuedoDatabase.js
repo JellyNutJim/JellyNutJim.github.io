@@ -6,7 +6,7 @@
   //[2] is the element'ss mass number.
   //[3] tells us whether the element is a metal or not. 
   
-  var elements = [['H', 'hydrogen', 1, 1, false], //Start of period 1.
+var elements = [['H', 'hydrogen', 1, 1, false], //Start of period 1.
                   ['He','helium', 2, 4, false], 
                   ['Li', 'lithium', 3, 6.9, true], //Start of period 2.
                   ['Be', 'beryllium', 4, 9, true],
