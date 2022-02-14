@@ -1,5 +1,4 @@
-class PDataBase 
-{
+
   //The backup database
   //[0] is the element's symbol.
   //[1] is the element's full name.
@@ -118,14 +117,4 @@ class PDataBase
                   ['Mt', 'meitnerium', 109, 276, true],
                   ['Ds', 'darmstadtium', 110, 281, true],
                   ['Rg', 'roentgenium', 11, 280, true]];
-                  
                  
-
-                  function testDB
-                  {
-                    Console.Table(elements);
-                  }
-  
-  
-  
-}
