@@ -15,7 +15,7 @@ function getBohrElectronStructure(electrons){
     var counter = 1;
 
     //As the first shell difers in size to the rest, we define it first.
-    if (electrons >= 2){
+    if (electrons > 2){
         shells[0] =  2;
         electrons -= 2;
     }
@@ -68,12 +68,14 @@ function displayElement2D(){
     var canvasHeight = canvas.height;
     var protonSize = canvasWidth / 20;
     var electronSize = canvasWidth / 25;
-    var outerElectronSize;
 
     //Resize shells and electrons if needed.
     //This is done to make sure that all shells fit within the frame.
-    if (electrons > 10){
-        electronSize = (electronSize / (electrons / 10));
+    if (electronShells > 7){
+        electronSize = canvasWidth / 50;
+    }
+    else if (electronShells > 4){
+        electronSize = canvasWidth / 35;
     }
 
     var shellWidth = electronSize * 2;
@@ -92,8 +94,8 @@ function displayElement2D(){
         
         //Changes the initial rotation on all the shells each time DisplayElement2D is called.
         //The if statement will only be true if the check box on the main page is active. (true by default)
+        
         dBohr.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
-
         
         
         //Takes in the electron structure at position [i] and compares it agaisnt 8 different possibilities.
@@ -160,20 +162,24 @@ function displayElement2D(){
 
 //The main entry point for the bohr model functions.
 function bohrMain(userInput){
-    var elementData;
-
     if(!checkValidElement(userInput)){
         var error = [true, "Invalid Element"]
         return error;
     }
-    else
-    {
-        elementData = getElementData(userInput);    
-    }
 
     //Get values.
-    var atmoicNum = elementData[2];
-    var atomicWeight = elementData[3];
+
+    //Temp values of sodium.
+    if (userInput == "Fe")
+    {
+        var atmoicNum = 56;
+        var atomicWeight = 26;
+    
+    }
+    else{
+        var atmoicNum = 11;
+        var atomicWeight = 23;
+    }
 
     protons = atmoicNum;
     electrons = atmoicNum;

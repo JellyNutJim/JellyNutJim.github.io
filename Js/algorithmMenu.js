@@ -71,11 +71,19 @@ function initializeDisplay(){
         case "d-Bohr":
             error = bohrMain(userInput);
             break;
+        case "d-3D":
+            break;
+        case "d-displayed":
+            error = createDisplayedFormula(userInput)
+            break;
     }
     
     //temp error displayer
     if (error[0] == true){
         console.log(error[1]);
+
     }
-    console.log(error[1]);
+    else{
+        console.log(error[1]);
+    }
 }
