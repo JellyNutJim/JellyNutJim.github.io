@@ -22,9 +22,11 @@ window.addEventListener('resize', function(event){
 });
 
 //Returns the current user display option.
-function getCurrentRadioOption(radioOptions){  
+function getCurrentRadioOption(){  
     //Search radioOptions array for the checked radio, then save the chosen value.
+    var radioOptions = document.getElementsByName("emOption");
     for (var i = 0; i < radioOptions.length; i++){
+
         if (radioOptions[i].checked){
             displayOption = radioOptions[i].value;
         }
@@ -36,6 +38,7 @@ function getCurrentRadioOption(radioOptions){
 //Checks if the selected button has been changed.
 //This function is used in animation loops to see if the loop must be broken.
 function checkSelectedTrue(currentActiveOption){
+
     var currentSelectedOption = getCurrentRadioOption();
     
     if (currentSelectedOption == currentActiveOption){
@@ -46,6 +49,25 @@ function checkSelectedTrue(currentActiveOption){
     }
 }
 
+//Clears the canvas upon being called.
+function clearCanvas()
+{
+    var canvas = document.getElementById("displayCanvas");
+    var c = canvas.getContext("2d");
+
+    c.fillStyle = "ivory";
+    c.strokeStyle = "ivory";
+    c.beginPath();
+    c.rect(canvas.width / 10, canvas.height / 10, canvas.width, canvas.height);
+    c.fill();
+    c.stroke();
+
+    console.log("cleared");
+}
+
+var oldOption;
+var loop = true;
+
 //Takes the users inputs, and calls the appropriate functions based on said input.
 function initializeDisplay(){
     //Define user values
@@ -53,7 +75,7 @@ function initializeDisplay(){
     var radioOptions = document.getElementsByName("emOption");
     var displayOption;
 
-    //Identical to the resize canvas method, but called once.
+    //Identical to the resize canvas method, but called once. 
     let mainCanvas = document.querySelector('.canvasHolder');
     var canvas = document.getElementById("displayCanvas");
     var pwidth = mainCanvas.clientWidth;
@@ -63,7 +85,18 @@ function initializeDisplay(){
     canvas.setAttribute('height', pheight);
 
     //Search radioOptions array for the checked radio, then save the chosen value.
-    displayOption = getCurrentRadioOption(radioOptions);
+    displayOption = getCurrentRadioOption();
+
+    if (oldOption == displayOption)
+    {
+        loop = true;
+    }
+    else
+    {
+        loop = false;
+    }
+
+    oldOption = displayOption;
     
     //Call the appropriate function based on user's choice.
     var error;

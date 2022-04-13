@@ -15,12 +15,11 @@ function getBohrElectronStructure(electrons){
     var counter = 1;
 
     //As the first shell difers in size to the rest, we define it first.
-    if (electrons > 2){
-        shells[0] =  2;
+    if (electrons >= 2){
+        shells[0] = 2;
         electrons -= 2;
-    }
 
-    //Run through the remaining number of electrons, increasing the electrons in each shell.
+        //Run through the remaining number of electrons, increasing the electrons in each shell.
     //Max of 8 electrons per shell.
     for (var i = 1; i < electrons + 1; i++){
         if (i % 8 != 0){
@@ -30,6 +29,13 @@ function getBohrElectronStructure(electrons){
             counter++;
         }
     }
+
+    } 
+    else
+    {
+        shells[0] = 1;
+    }
+
     //Returns the electron structure as well as the number of shells.
     return [shells, counter + 1];
 }
@@ -153,10 +159,23 @@ function displayElement2D(){
         }
     }
     
+    //Returns a boolean value bassed on whether the current selected option has changed
+    var currentOption = checkSelectedTrue("d-Bohr");
     
-    
-    //Re-calls the function using animation frames.
-    window.requestAnimationFrame(displayElement2D);
+
+    //If the option has not changed then the loop can continiue.
+    if (currentOption)
+    {
+        //Re-calls the function using animation frames.
+        window.requestAnimationFrame(displayElement2D);
+    }
+    else
+    {
+        //Loop should break.
+        dBohr.restore();
+        clearCanvas();
+    }
+
 }
 
 
@@ -168,22 +187,13 @@ function bohrMain(userInput){
     }
 
     //Get values.
+    var inputElement = getElementData(userInput);
+    var atomicNum = inputElement[2];
+    var atomicWeight = inputElement[3]
 
-    //Temp values of sodium.
-    if (userInput == "Fe")
-    {
-        var atmoicNum = 56;
-        var atomicWeight = 26;
-    
-    }
-    else{
-        var atmoicNum = 11;
-        var atomicWeight = 23;
-    }
-
-    protons = atmoicNum;
-    electrons = atmoicNum;
-    neutrons = Math.floor(atomicWeight - atmoicNum);
+    protons = atomicNum;
+    electrons = atomicNum;
+    neutrons = Math.floor(atomicWeight - atomicNum);
     electronStructure = getBohrElectronStructure(electrons)[0]; //E.g. 2.8.8.4
     electronShells = getBohrElectronStructure(electrons)[1]; //E.g.  4 shells
 
