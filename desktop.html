@@ -2,10 +2,12 @@
 
 <!-- This file is loaded upon a desktop enviroment being detected-->
 
-<html>
+<html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="CSS/desktopStyle.css">
         <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon.ico">
+        <meta name="viewport" content="width=device-wdith, initial-scale=1.0">
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
         <script src="Js/algorithmMenu.js"></script>
         <script src="Js/interpret.js"></script>
 
@@ -16,9 +18,13 @@
         <!-- Loads the backup database -->
         <script src="Js/Algorithms/PsuedoDatabase.js"></script>
 
+        <model-viewer src="Assets\sBlock4.glb"></model-viewer>
+
         <link href="https://fonts.googleapis.com/css2?family=Asap&family=Lato&family=Montserrat&family=Space+Mono&family=Ubuntu&display=swap" rel="stylesheet">
         <title>Element Lab</title>
     </head>
+
+
     
     <body onload="initializeDisplay()">
         <header>
