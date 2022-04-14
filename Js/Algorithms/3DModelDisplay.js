@@ -32,7 +32,10 @@ function display(userInput)
     //var display = document.getElementById("3DModelViewer");
     //display.style.display = "inline";
 
-    var newDisplaySection = document.getElementById("displayCanvas");
+    var newDisplaySection = document.getElementById("canvasHolder");
+
+
+
     newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p1.glb' camera-controls auto-rotate></model-viewer>";
 
 
