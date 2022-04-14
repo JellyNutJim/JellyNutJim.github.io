@@ -13,16 +13,12 @@ function switchPage(filename){
 window.addEventListener('resize', function(event){
     let mainCanvas = document.querySelector('.canvasHolder');
     var canvas = document.getElementById("displayCanvas");
-    var modelDisplay = document.getElementById("3DModelViewer");
     var pwidth = mainCanvas.clientWidth;
     var pheight = mainCanvas.clientHeight;
 
     canvas.setAttribute('width', pwidth);
     canvas.setAttribute('height', pheight);
-    modelDisplay.setAttribute('width', pwidth);
-    modelDisplay.setAttribute('height', pheight);
 
-    console.log(modelDisplay.height);
     initializeDisplay();
 
 });

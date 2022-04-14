@@ -29,8 +29,6 @@ function display(userInput)
     canvas.style.display = "none";
 
     var newDisplaySection = document.getElementById("canvasHolder");
-    newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p1.glb' camera-controls auto-rotate></model-viewer>";
-
 
     //Display correct model
     switch (userInput)
@@ -69,6 +67,8 @@ function display(userInput)
             break;
 
     }
+
+    validateModel();
 
     return [false, "Run Succesfull"];
 }
