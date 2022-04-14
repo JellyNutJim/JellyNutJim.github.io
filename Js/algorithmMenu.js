@@ -82,7 +82,13 @@ function validateModel()
 //Sets model exsits to false when called.
 function clearModel()
 {
-    modelExists = false;
+    //If a 3D model already exists, it must be deleted before continuing.
+    if (modelExists == true)
+    {
+        var model = document.getElementById("3DModelViewer");
+        model.remove();
+        clearModel();
+    }
 }
 
 
@@ -95,13 +101,6 @@ function initializeDisplay(){
     var userInput = document.getElementById("emInput").value;
     var radioOptions = document.getElementsByName("emOption");
     var displayOption;
-
-    //If a 3D model already exists, it must be deleted before continuing.
-    if (modelExists == true)
-    {
-        var model = document.getElementById("3DModelViewer");
-        model.remove();
-    }
 
     //Identical to the resize canvas method, but called once. 
     let mainCanvas = document.querySelector('.canvasHolder');
@@ -130,12 +129,8 @@ function initializeDisplay(){
     var error;
     switch(displayOption){
         case "d-Bohr":
+            clearModel();
             error = bohrMain(userInput);
-
-            //Display canvas if not already being displayed.
-            //var canvas = document.getElementById("displayCanvas");
-            //canvas.style.display = "block";
-
             break;
         case "d-3D":
             haultLoop();
@@ -143,11 +138,7 @@ function initializeDisplay(){
             break;
         case "d-displayed":
             haultLoop();
-
-            //Display canvas if not already being displayed.
-            //var canvas = document.getElementById("displayCanvas");
-            //canvas.style.display = "block";
-
+            clearModel();
             error = createDisplayedFormula(userInput);
             break;
     }
