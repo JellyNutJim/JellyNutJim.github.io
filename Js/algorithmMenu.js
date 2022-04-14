@@ -138,6 +138,11 @@ function initializeDisplay(){
             clearModel();
             error = createDisplayedFormula(userInput);
             break;
+        case "d-skeletal":
+            haultLoop();
+            clearModel();
+            error = createSkeletal(userInput);
+            break;
     }
     
     //temp error displayer

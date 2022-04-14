@@ -133,3 +133,112 @@ function bohrMain(userInput){
     return [false, "Run Succesfull"];
 }
 
+/*
+ x = 30;
+        y = -15;
+        for (var i = 0; i < carbons; i++)
+        {
+            c.beginPath();
+            c.moveTo(0,0);
+            c.lineTo(x, y);
+            c.stroke();
+            x += 30;
+            
+            if (y == -15)
+            {
+                y = 0;
+            } else
+            {
+                y = -15;
+            }
+        }
+    }*/
+
+
+    
+
+    /*
+    for (var i = 0; i < uniqueElementCount; i++)
+    {
+        c.font = "30px Arial";
+        c.fillStyle = "black";
+        c.fillText(m.element, 0, 0);
+
+        if (m.l != null)
+        {
+            var width = c.measureText(m.l.element).width;
+            var height = 15;
+            c.translate(-width - 30, 0);
+
+            c.fillText(m.l.element, 0 , 0);
+
+            c.translate(width, -(height / 2) - 4);
+
+            c.beginPath();
+            c.moveTo(0,0);
+            c.lineTo(30, 0);
+            c.stroke();
+
+            c.translate(30, (height / 2) + 4)
+        }
+
+        if (m.r != null)
+        {
+            var width = c.measureText(m.r.element).width * 2;
+            var height = 15;
+            c.translate(width + 30, 0);
+
+            c.fillText(m.l.element, 0 , 0);
+
+            c.translate(-width / 2, (height / 4) + 4);
+
+            c.beginPath();
+            c.moveTo(0,0);
+            c.lineTo(30, 0);
+            c.stroke();
+
+            c.translate(-30 -width / 2, -(height / 4) - 4)
+        }
+
+        if (m.u != null)
+        {
+            var width = c.measureText(m.u.element).width;
+            var height = 25;
+            c.translate(0, -height - 30);
+
+            c.fillText(m.l.element, 0 , 0);
+
+            c.translate(width / 2, height / 4 - 4);
+
+            c.beginPath();
+            c.moveTo(0,0);
+            c.lineTo(0, 30);
+            c.stroke();
+
+            c.translate(-(width / 2), 30)
+        }
+
+        if (m.d != null)
+        {
+            c.translate(0, 25);
+            var width = c.measureText(m.u.element).width;
+            var height = 25;
+            c.translate(0, height + 30);
+
+            c.fillText(m.l.element, 0 , 0);
+
+            c.translate(width / 2, -height + 4);
+
+            c.beginPath();
+            c.moveTo(0,0);
+            c.lineTo(0, -30);
+            c.stroke();
+
+            c.translate(-(width / 2), -30 - 25)
+        }
+
+    }*/
+
+    //c.font = "30px Arial";
+    //c.fillStyle = "black";
+    //c.fillText(m.element, 0, 0);

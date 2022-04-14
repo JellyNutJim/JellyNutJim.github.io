@@ -12,6 +12,7 @@ function createDisplayedFormula(userInput)
     var numOfElement;
     elementCount = 0;
     elementLinkedList = null;
+    uniqueElementCount = 0;
 
     userInput = userInput + "  ";
 
@@ -55,16 +56,13 @@ function createDisplayedFormula(userInput)
                 }
             }
 
-            if (tempElementHolder == "C"){
+            if (tempElementHolder == "C" || "O" || "S"){
                 uniqueElementCount++;
             }
         }
-
-
-
     }
 
-    console.log("ELELELE " + uniqueElementCount);
+    //console.log("ELELELE " + uniqueElementCount);
     elementLinkedList = reverseList(elementLinkedList);
 
     /*
@@ -85,7 +83,7 @@ function createDisplayedFormula(userInput)
     } */
     m = null;
     root = true;
-    console.log("m " + m);
+    //console.log("m " + m);
     buildMolecule(elementLinkedList)
 
 
@@ -115,7 +113,7 @@ function getOuterShell(atomicNumber)
 
     for (var i = 0; i < shells.length; i++)
     {
-        console.log(shells[i]);
+        //console.log(shells[i]);
         if (shells[i] == 0) { 
             break;
         } 
@@ -131,7 +129,7 @@ function getOuterShell(atomicNumber)
 function buildMolecule(elementLinkedList)
 {
     //clearCanvas();
-    console.log("loool" + elementLinkedList.elementID);
+    //console.log("loool" + elementLinkedList.elementID);
 
     //Get the current element data.
     var currentElement = elementLinkedList.elementID;
@@ -143,7 +141,7 @@ function buildMolecule(elementLinkedList)
 
     if (root)
     {
-        console.log("yeet");
+        //console.log("yeet");
         m = new molecule(currentElement, outerShellConfig);
         root = false;
     }
@@ -166,24 +164,19 @@ function buildMolecule(elementLinkedList)
             nElementFreq = 1;
         }
 
-        console.log("poggers '" + nElementFreq + "'");
-
         if (nElementFreq == 1)
         {
-            console.log("dasdasda");
                 m.u = new molecule(nElement, nouterShellConfig);
 
                 console.log(m.u);
         } 
         else if (nElementFreq == 2)
         {
-            console.log("wot");
                 m.u = new molecule(nElement, nouterShellConfig);
                 m.d = new molecule(nElement, nouterShellConfig);
         }
         else if (nElementFreq == 3)
         {
-            console.log("chef");
                 m.u = new molecule(nElement, nouterShellConfig);
                 m.d = new molecule(nElement, nouterShellConfig);
 
@@ -213,7 +206,6 @@ function buildMolecule(elementLinkedList)
 
     if (elementLinkedList.next != null)
     {
-        console.log("toast");
         elementLinkedList = elementLinkedList.next;
         currentElement = elementLinkedList.elementID;
 
@@ -248,106 +240,95 @@ function drawDisplayed(molecule)
 
     var canvas = document.getElementById("displayCanvas");
     var c = canvas.getContext("2d");
+    c.restore();
+    c.save();
+    c.restore();
 
-    var x = canvas.width / 2;
+    var x = canvas.width / 2 + ((uniqueElementCount - 1) * 5);
     var y = canvas.height / 2;
+    var leftMost;
+    var rightMost;
 
 
     c.translate(x, y);
 
     for (var i = 0; i < uniqueElementCount; i++)
     {
+        var width = c.measureText(m.element).width;
         c.font = "30px Arial";
         c.fillStyle = "black";
         c.fillText(m.element, 0, 0);
 
+        //console.log("up: " + m.u.element);
+        //console.log("down: " + m.d.element);
+        //console.log("right: " + m.r.element);
+        //console.log("left: " + m.l.element);
+
         if (m.l != null)
         {
-            var width = c.measureText(m.l.element).width;
-            var height = 15;
-            c.translate(-width - 30, 0);
+            width = c.measureText(m.l.element).width;
 
-            c.fillText(m.l.element, 0 , 0);
-
-            c.translate(width, -(height / 2) - 4);
-
+            //Draw line to attached element.
             c.beginPath();
-            c.moveTo(0,0);
-            c.lineTo(30, 0);
+            c.moveTo(0, -width / 2);
+            c.lineTo(-30, -width / 2);
+            c.fillText(m.l.element, -30 - width, 0);
             c.stroke();
-
-            c.translate(30, (height / 2) + 4)
-        }
-
-        if (m.r != null)
-        {
-            var width = c.measureText(m.r.element).width * 2;
-            var height = 15;
-            c.translate(width + 30, 0);
-
-            c.fillText(m.l.element, 0 , 0);
-
-            c.translate(-width / 2, (height / 4) + 4);
-
-            c.beginPath();
-            c.moveTo(0,0);
-            c.lineTo(30, 0);
-            c.stroke();
-
-            c.translate(-30 -width / 2, -(height / 4) - 4)
         }
 
         if (m.u != null)
         {
-            var width = c.measureText(m.u.element).width;
-            var height = 25;
-            c.translate(0, -height - 30);
+            width = c.measureText(m.u.element).width;
 
-            c.fillText(m.l.element, 0 , 0);
-
-            c.translate(width / 2, height / 4 - 4);
-
+            //Draw line to attached element.
             c.beginPath();
-            c.moveTo(0,0);
-            c.lineTo(0, 30);
+            c.moveTo(width / 2, -25);
+            c.lineTo(width / 2, -55);
+            c.fillText(m.u.element, 0, -60);
             c.stroke();
-
-            c.translate(-(width / 2), 30)
         }
 
         if (m.d != null)
         {
-            c.translate(0, 25);
-            var width = c.measureText(m.u.element).width;
-            var height = 25;
-            c.translate(0, height + 30);
+            width = c.measureText(m.d.element).width;
 
-            c.fillText(m.l.element, 0 , 0);
-
-            c.translate(width / 2, -height + 4);
-
+            //Draw line to attached element.
             c.beginPath();
-            c.moveTo(0,0);
-            c.lineTo(0, -30);
+            c.moveTo(width / 2, 5);
+            c.lineTo(width / 2, 35);
+            c.fillText(m.d.element, 0, 60);
             c.stroke();
-
-            c.translate(-(width / 2), -30 - 25)
         }
 
+        if (m.r != null)
+        {
+            width = c.measureText(m.r.element).width;
+
+            //Draw line to attached element.
+            c.beginPath();
+            c.moveTo(width, -width / 2);
+            c.lineTo(30 + width, -width / 2);
+            c.fillText(m.r.element, 30 + width, 0);
+            c.stroke();
+        }
+
+        if (m.l.element != "H")
+        {
+            width = c.measureText(m.l.element).width;
+            m = m.l;
+            c.translate(-30 - width,0)
+        }
+        else
+        {
+            break;
+        }
     }
 
-    //c.font = "30px Arial";
-    //c.fillStyle = "black";
-    //c.fillText(m.element, 0, 0);
 
-
-
+    c.translate(0, 100);
+    dBohr.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function drawMolecule(m)
-{
-    
-}
 
 
 class element {
