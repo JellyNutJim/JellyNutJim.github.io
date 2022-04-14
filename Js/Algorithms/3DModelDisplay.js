@@ -58,13 +58,13 @@ function display(userInput)
             newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p2.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "F":
-            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p3.glb' camera-controls auto-rotate></model-viewer>";
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/Altp3.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "Ne":
-            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p3.glb' camera-controls auto-rotate></model-viewer>";
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/Altp3.glb' camera-controls auto-rotate></model-viewer>";
             break;
         default:
-            return [true, "Invalid Element"]
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/4.glb' camera-controls auto-rotate></model-viewer>";
             break;
 
     }
