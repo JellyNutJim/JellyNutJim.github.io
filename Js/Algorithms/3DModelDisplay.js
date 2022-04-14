@@ -7,17 +7,18 @@ var p3 = new Image();
 function displayModel(userInput)
 {
     //pre load assets
-    s.src = "Assets\s.glb";
-    p1.src = "Assets\s.glb";
-    p2.src = "Assets\p2.glb";
-    p3.src = "Assets\p3.glb";
+    s.src = 'Assets/s.glb';
+    p1.src = 'Assets/p1.glb';
+    p2.src = 'Assets/p2.glb';
+    p3.src = 'Assets/p3.glb';
 
     display(userInput);
 
     return [false, "Run Succesfull"];
 }
 
-function display()
+
+function display(userInput)
 {
     if(!checkValidElement(userInput)){
         var error = [true, "Invalid Element"]
