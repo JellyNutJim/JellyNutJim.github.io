@@ -1,5 +1,17 @@
+var s = new Image();
+var p1 = new Image();
+var p2 = new Image();
+var p3 = new Image();
+
+
 function displayModel(userInput)
 {
+    //pre load assets
+    s.src = "Assets\s.glb";
+    p1.src = "Assets\s.glb";
+    p2.src = "Assets\p2.glb";
+    p3.src = "Assets\p3.glb";
+
     if(!checkValidElement(userInput)){
         var error = [true, "Invalid Element"]
         return error;
@@ -11,7 +23,14 @@ function displayModel(userInput)
     var display = document.getElementById("3DModelViewer");
     display.style.display = "block";
 
+    display.src = p1;
 
+    //Display correct model
+    switch (userInput)
+    {
+        case "H":
+
+    }
 
     return [false, "Run Succesfull"];
 }

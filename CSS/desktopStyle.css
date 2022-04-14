@@ -20,6 +20,11 @@ header h1{
     font-size: 7vh;
 }
 
+model-viewer
+{
+    margin: 0 auto;
+}
+
 
 
 /* Main ------------------------------------------------------ */
