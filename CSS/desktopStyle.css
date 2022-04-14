@@ -22,7 +22,9 @@ header h1{
 
 model-viewer
 {
-    margin: 0 auto;
+    width: 5000;
+    height: 5000;
+    margin: auto auto;
 }
 
 

@@ -12,6 +12,13 @@ function displayModel(userInput)
     p2.src = "Assets\p2.glb";
     p3.src = "Assets\p3.glb";
 
+    display(userInput);
+
+    return [false, "Run Succesfull"];
+}
+
+function display()
+{
     if(!checkValidElement(userInput)){
         var error = [true, "Invalid Element"]
         return error;

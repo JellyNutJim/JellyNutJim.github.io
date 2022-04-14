@@ -16,12 +16,13 @@ window.addEventListener('resize', function(event){
     var modelDisplay = document.getElementById("3DModelViewer");
     var pwidth = mainCanvas.clientWidth;
     var pheight = mainCanvas.clientHeight;
-    
 
     canvas.setAttribute('width', pwidth);
     canvas.setAttribute('height', pheight);
     modelDisplay.setAttribute('width', pwidth);
     modelDisplay.setAttribute('height', pheight);
+
+    console.log(modelDisplay.height);
     initializeDisplay();
 
 });
@@ -80,11 +81,9 @@ function initializeDisplay(){
     var radioOptions = document.getElementsByName("emOption");
     var displayOption;
 
-    //Hide the model display
+    //Hide model display
     var display = document.getElementById("3DModelViewer");
     display.style.display = "none";
-
-
 
     //Identical to the resize canvas method, but called once. 
     let mainCanvas = document.querySelector('.canvasHolder');
