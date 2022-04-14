@@ -27,15 +27,8 @@ function display(userInput)
 
     var canvas = document.getElementById("displayCanvas");
     canvas.style.display = "none";
-    
-    console.log("yes");
-    //var display = document.getElementById("3DModelViewer");
-    //display.style.display = "inline";
 
     var newDisplaySection = document.getElementById("canvasHolder");
-
-
-
     newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p1.glb' camera-controls auto-rotate></model-viewer>";
 
 
@@ -43,24 +36,34 @@ function display(userInput)
     switch (userInput)
     {
         case "H":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/s.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "He":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/s.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "Li":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/s.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "Be":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/s.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "B":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p1.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "C":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p1.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "N":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p2.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "O":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p2.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "F":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p3.glb' camera-controls auto-rotate></model-viewer>";
             break;
         case "Ne":
+            newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p3.glb' camera-controls auto-rotate></model-viewer>";
             break;
         default:
             break;

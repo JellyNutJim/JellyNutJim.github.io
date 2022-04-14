@@ -71,6 +71,21 @@ function clearCanvas()
     console.log("cleared");
 }
 
+var modelExists = false;
+
+//Sets model exsits to true when called.
+function validateModel()
+{
+    modelExists = true;
+}
+
+//Sets model exsits to false when called.
+function clearModel()
+{
+    modelExists = false;
+}
+
+
 var oldOption;
 var loop = true;
 
@@ -81,9 +96,12 @@ function initializeDisplay(){
     var radioOptions = document.getElementsByName("emOption");
     var displayOption;
 
-    //Hide model display
-    //var display = document.getElementById("3DModelViewer");
-    //display.style.display = "none";
+    //If a 3D model already exists, it must be deleted before continuing.
+    if (modelExists == true)
+    {
+        var model = document.getElementById("3DModelViewer");
+        model.remove();
+    }
 
     //Identical to the resize canvas method, but called once. 
     let mainCanvas = document.querySelector('.canvasHolder');
