@@ -82,8 +82,8 @@ function initializeDisplay(){
     var displayOption;
 
     //Hide model display
-    var display = document.getElementById("3DModelViewer");
-    display.style.display = "none";
+    //var display = document.getElementById("3DModelViewer");
+    //display.style.display = "none";
 
     //Identical to the resize canvas method, but called once. 
     let mainCanvas = document.querySelector('.canvasHolder');
@@ -115,8 +115,8 @@ function initializeDisplay(){
             error = bohrMain(userInput);
 
             //Display canvas if not already being displayed.
-            var canvas = document.getElementById("displayCanvas");
-            canvas.style.display = "block";
+            //var canvas = document.getElementById("displayCanvas");
+            //canvas.style.display = "block";
 
             break;
         case "d-3D":
@@ -127,8 +127,9 @@ function initializeDisplay(){
             haultLoop();
 
             //Display canvas if not already being displayed.
-            var canvas = document.getElementById("displayCanvas");
-            canvas.style.display = "block";
+            //var canvas = document.getElementById("displayCanvas");
+            //canvas.style.display = "block";
+
             error = createDisplayedFormula(userInput);
             break;
     }

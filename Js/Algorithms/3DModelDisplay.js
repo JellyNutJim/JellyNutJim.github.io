@@ -28,8 +28,12 @@ function display(userInput)
     var canvas = document.getElementById("displayCanvas");
     canvas.style.display = "none";
     
-    var display = document.getElementById("3DModelViewer");
-    display.style.display = "block";
+    console.log("yes");
+    //var display = document.getElementById("3DModelViewer");
+    //display.style.display = "inline";
+
+    var newDisplaySection = document.getElementById("displayCanvas");
+    newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p1.glb' camera-controls auto-rotate></model-viewer>";
 
 
     //Display correct model
