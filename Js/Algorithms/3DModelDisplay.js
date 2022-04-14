@@ -64,6 +64,7 @@ function display(userInput)
             newDisplaySection.innerHTML += "<model-viewer id='3DModelViewer' src='Assets/p3.glb' camera-controls auto-rotate></model-viewer>";
             break;
         default:
+            return [true, "Invalid Element"]
             break;
 
     }
