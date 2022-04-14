@@ -130,6 +130,7 @@ function initializeDisplay(){
             break;
         case "d-3D":
             haultLoop();
+            clearModel()
             error = displayModel(userInput);
             break;
         case "d-displayed":
