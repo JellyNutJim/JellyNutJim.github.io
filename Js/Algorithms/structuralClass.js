@@ -326,7 +326,7 @@ function drawDisplayed(molecule)
 
 
     c.translate(0, 100);
-    dBohr.clearRect(0, 0, canvas.width, canvas.height);
+    c.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 

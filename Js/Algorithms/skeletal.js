@@ -24,55 +24,170 @@ function createSkeletal(userInput)
         createDisplayedFormula(userInput);
     }
 
-
     drawSkeletal(carbons)
+
     var carbonData = "";
+    var loop = true;
     userInput = userInput += " ";
     console.log("start");
-    for (var i = 0; i < userInput.Length; i++)
+
+    var carbonDataArray = new Array(carbons);
+    var counter = 0;
+
+    for (var i = 0; i < userInput.length; i++)
     {
-        console.log("start: " + userInput[i]);
         if (userInput[i] == "C")
         {
-            console.log("1: " + userInput[i]);
+            loop = true;
             i++;
-            console.log("2: " + userInput[i]);
-            while (userInput[i] != "C" || " ")
+
+            if (userInput[i] == "C")
             {
-                console.log("3: " + userInput[i]);
+                carbonDataArray[counter] = " ";
+            }
+
+            while (loop)
+            {
+                if (userInput[i] == 'C' || userInput[i] == ' ')
+                {
+                    loop = false;
+                    break;
+                }
+
                 carbonData += userInput[i];
                 i++
             }
-            i--;
-            console.log(carbonData);
+
+            //console.log("data: " + carbonData);
+            carbonDataArray[counter] = carbonData;
+            counter++;
             carbonData = "";
 
-            /*
-            var attemptedElement = userInput[i + 1 ] + userInput[i + 2];
-            var attemptedNum = userInput[i + 3];
-            
-            //If it's not a valid element.
-            if(!checkValidElement(attemptedElement)){
-                attemptedElement = userInput[i + 1];
-                attemptedNum = userInput[i + 2]
-                
-
-                if (attemptedNum == "1" || "2" || "3")
-                {
-
-                }
-            } 
-            else
+            if (userInput[i] == ' ')
             {
+                break;
+            }
 
-            } */
-
+            i--;
         }
     }
+
+
+    var t = measureConnections(carbonDataArray);
+    console.log(t);
 
     return [false, "Run Succesfull"];
 }
 
+//Converts the carbonDataArray into a usable format
+function measureConnections(carbonDataArray)
+{
+    var counter = 0;
+    var newDataArray = new Array(carbonDataArray.length);
+    var carbonNum = carbonDataArray.length;
+    var numberOfNeededConnections = 0;
+    var connectedElements;
+
+    for (var i = 0; i < carbonDataArray.length; i++)
+    {
+        var temp = carbonDataArray[i];
+        
+        //Calculate the required number of connections.
+        if (i == 0 || i == carbonDataArray - 1)
+        {
+            numberOfNeededConnections = 3;
+        }
+        else
+        {
+            numberOfNeededConnections = 2;
+        }
+
+
+       for (var p = 0; p < temp.length; i++)
+       {
+            if (temp[p] == " ")
+            {
+                newDataArray[i] = "d";
+                break;
+            }
+
+            var attemptedElement = temp[p] + temp[p + 1];
+            var attemptedNum = temp[p + 2];
+
+            //Returns true if the element is invalid.
+            if(!checkValidElement(attemptedElement)){
+
+                attemptedElement = temp[p];
+                attemptedNum = temp[p + 1]
+
+                switch (attemptedNum)
+                {
+                    case "1":
+                        numberOfNeededConnections--;
+                        newDataArray[i] += "'1" + attemptedElement;
+                        p += 2;
+                        break;
+                    case "2":
+                        numberOfNeededConnections -= 2;
+                        newDataArray[i] += "'2" + attemptedElement;
+                        p += 2;
+                        break;
+                    case "3":
+                        numberOfNeededConnections -= 3;
+                        newDataArray[i] += "'3" + attemptedElement;
+                        p += 2;
+                        break;
+                    default:
+                        numberOfNeededConnections -= 1;
+                        newDataArray[i] += "'1" + attemptedElement;
+                        p += 1;
+                        break;
+                }
+            }
+            else //The element is valid
+            {
+                switch (attemptedNum)
+                {
+                    case "1":
+                        numberOfNeededConnections--;
+                        newDataArray[i] += "'1" + attemptedElement;
+                        p += 3;
+                        break;
+                    case "2":
+                        numberOfNeededConnections -= 2;
+                        newDataArray[i] += "'2" + attemptedElement;
+                        p += 3;
+                        break;
+                    case "3":
+                        numberOfNeededConnections -= 3;
+                        newDataArray[i] += "'3" + attemptedElement;
+                        p += 3;
+                        break;
+                    default:
+                        numberOfNeededConnections -= 1;
+                        newDataArray[i] += "'1" + attemptedElement;
+                        p += 2;
+                        break;
+                }
+            }
+       } 
+
+       switch (numberOfNeededConnections)
+       {
+           case 0:
+               continue;
+            case 1:
+                newDataArray[i] += "d";
+                break;
+            default:
+                console.log("error");
+                break;
+       }
+    }
+
+    return newDataArray;
+
+}
 
 function drawSkeletal(carbons)
 {

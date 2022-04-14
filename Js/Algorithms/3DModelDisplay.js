@@ -30,7 +30,7 @@ function display(userInput)
 
     var newDisplaySection = document.getElementById("canvasHolder");
 
-    //Display correct model
+    //Display correct model bassed on input.
     switch (userInput)
     {
         case "H":
