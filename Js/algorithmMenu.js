@@ -13,17 +13,17 @@ function switchPage(filename){
 window.addEventListener('resize', function(event){
     let mainCanvas = document.querySelector('.canvasHolder');
     var canvas = document.getElementById("displayCanvas");
+    var modelDisplay = document.getElementById("3DModelViewer");
     var pwidth = mainCanvas.clientWidth;
     var pheight = mainCanvas.clientHeight;
+    
 
     canvas.setAttribute('width', pwidth);
     canvas.setAttribute('height', pheight);
-    initializeDisplay();
-
-    var modelDisplay = document.getElementById("3DModelViewer");
-
     modelDisplay.setAttribute('width', pwidth);
     modelDisplay.setAttribute('height', pheight);
+    initializeDisplay();
+
 });
 
 //Returns the current user display option.
@@ -81,8 +81,8 @@ function initializeDisplay(){
     var displayOption;
 
     //Hide the model display
-    var x = document.getElementById("3DModelViewer");
-    x.style.display = "none";
+    var display = document.getElementById("3DModelViewer");
+    display.style.display = "none";
 
 
 
@@ -114,6 +114,11 @@ function initializeDisplay(){
     switch(displayOption){
         case "d-Bohr":
             error = bohrMain(userInput);
+
+            //Display canvas if not already being displayed.
+            var canvas = document.getElementById("displayCanvas");
+            canvas.style.display = "block";
+
             break;
         case "d-3D":
             haultLoop();
@@ -121,6 +126,10 @@ function initializeDisplay(){
             break;
         case "d-displayed":
             haultLoop();
+
+            //Display canvas if not already being displayed.
+            var canvas = document.getElementById("displayCanvas");
+            canvas.style.display = "block";
             error = createDisplayedFormula(userInput);
             break;
     }
