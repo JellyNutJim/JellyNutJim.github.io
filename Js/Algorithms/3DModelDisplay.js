@@ -31,12 +31,32 @@ function display(userInput)
     var display = document.getElementById("3DModelViewer");
     display.style.display = "block";
 
-    display.src = p1;
 
     //Display correct model
     switch (userInput)
     {
         case "H":
+            break;
+        case "He":
+            break;
+        case "Li":
+            break;
+        case "Be":
+            break;
+        case "B":
+            break;
+        case "C":
+            break;
+        case "N":
+            break;
+        case "O":
+            break;
+        case "F":
+            break;
+        case "Ne":
+            break;
+        default:
+            break;
 
     }
 

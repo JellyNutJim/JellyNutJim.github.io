@@ -4,7 +4,6 @@ function checkValidElement(userInput){
 
     for (var i = 0; i < elements.length; i++)
     {
-        console.log(userInput);
         if (userInput == elements[i][0] || userInput.toLowerCase() == elements[i][1]){
             return true;
         }
