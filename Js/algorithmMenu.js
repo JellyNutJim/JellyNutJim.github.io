@@ -82,8 +82,7 @@ function clearModel()
     if (modelExists == true)
     {
         var model = document.getElementById("3DModelViewer");
-        model.remove();
-        clearModel();
+        model.Remove();
     }
 }
 
