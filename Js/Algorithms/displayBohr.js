@@ -7,6 +7,12 @@ var neutrons;
 var electronStructure;
 var electronShells;
 var time;
+var loop;
+
+function haultLoop()
+{
+    loop = false;
+}
 
 
 //Splits the entered amount of electrons into shells.
@@ -164,7 +170,7 @@ function displayElement2D(){
     
 
     //If the option has not changed then the loop can continiue.
-    if (currentOption)
+    if (currentOption || loop)
     {
         //Re-calls the function using animation frames.
         window.requestAnimationFrame(displayElement2D);
@@ -185,6 +191,8 @@ function bohrMain(userInput){
         var error = [true, "Invalid Element"]
         return error;
     }
+
+    loop = true;
 
     //Get values.
     var inputElement = getElementData(userInput);

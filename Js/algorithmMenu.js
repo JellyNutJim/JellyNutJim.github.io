@@ -19,6 +19,11 @@ window.addEventListener('resize', function(event){
     canvas.setAttribute('width', pwidth);
     canvas.setAttribute('height', pheight);
     initializeDisplay();
+
+    var modelDisplay = document.getElementById("3DModelViewer");
+
+    modelDisplay.setAttribute('width', pwidth);
+    modelDisplay.setAttribute('height', pheight);
 });
 
 //Returns the current user display option.
@@ -75,6 +80,12 @@ function initializeDisplay(){
     var radioOptions = document.getElementsByName("emOption");
     var displayOption;
 
+    //Hide the model display
+    var x = document.getElementById("3DModelViewer");
+    x.style.display = "none";
+
+
+
     //Identical to the resize canvas method, but called once. 
     let mainCanvas = document.querySelector('.canvasHolder');
     var canvas = document.getElementById("displayCanvas");
@@ -105,9 +116,12 @@ function initializeDisplay(){
             error = bohrMain(userInput);
             break;
         case "d-3D":
+            haultLoop();
+            error = displayModel(userInput);
             break;
         case "d-displayed":
-            error = createDisplayedFormula(userInput)
+            haultLoop();
+            error = createDisplayedFormula(userInput);
             break;
     }
     

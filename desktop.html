@@ -6,6 +6,8 @@
     <head>
         <link rel="stylesheet" type="text/css" href="CSS/desktopStyle.css">
         <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon.ico">
+
+        <!-- Loads google model viewer, the tool im using too display 3D models-->
         <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
         <script src="Js/algorithmMenu.js"></script>
         <script src="Js/interpret.js"></script>
@@ -13,11 +15,10 @@
         <!-- Loads in the possible algorithms that can be called-->
         <script src="Js/Algorithms/displayBohr.js"></script>
         <script src="Js//Algorithms/structuralClass.js"></script>
+        <script src="Js/Algorithms/3DModelDisplay.js"></script>
         
         <!-- Loads the backup database -->
         <script src="Js/Algorithms/PsuedoDatabase.js"></script>
-
-        <model-viewer src="Assets\sBlock4.glb" camera-controls auto-rotate></model-viewer>
 
         <link href="https://fonts.googleapis.com/css2?family=Asap&family=Lato&family=Montserrat&family=Space+Mono&family=Ubuntu&display=swap" rel="stylesheet">
         <title>Element Lab</title>
@@ -34,7 +35,8 @@
             <!-- The main bulk of the website will be split into two parts, the canvas and the interface-->
             <!--The canvas-->
             <section class="canvasHolder">
-                <canvas id="displayCanvas">
+                <canvas id="displayCanvas"></canvas>
+                <model-viewer src="Assets/p1.glb" camera-controls auto-rotate id="3DModelViewer"></model-viewer>
             </section>
             
             <!-- The main user interface, including all options -->
