@@ -20,14 +20,6 @@ header h1{
     font-size: 7vh;
 }
 
-model-viewer
-{
-    width: 85%;
-    height: 100%;
-    margin: auto auto;
-}
-
-
 
 /* Main ------------------------------------------------------ */
 
@@ -60,6 +52,31 @@ main .canvasHolder{
     border-radius: 49px 49px 0px 0px;
 }
 
+/* The 3D model display*/
+model-viewer
+{
+    width: 85%;
+    height: 100%;
+    margin: auto auto;
+}
+
+main h3
+{
+    font-family: 'Asap', sans-serif;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: -1;
+}
+
+#displayCanvas
+{
+    position: absolute;
+    z-index: 1;
+}
 
 main .userMenu{
     width: 100%;

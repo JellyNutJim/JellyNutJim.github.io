@@ -93,6 +93,12 @@ var loop = true;
 
 //Takes the users inputs, and calls the appropriate functions based on said input.
 function initializeDisplay(){
+
+    console.log("Setting Display");
+
+    //Reset the invalid element text display
+    document.getElementById("invalidDisplay").style.zIndex = "-1";
+
     //Define user values
     var userInput = document.getElementById("emInput").value;
     var radioOptions = document.getElementsByName("emOption");

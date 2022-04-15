@@ -4,13 +4,25 @@
 
 <html>
     <head>
+        <!-- loads the style sheet for this HTML paeg, and the icon-->
         <link rel="stylesheet" type="text/css" href="CSS/mobileStyle.css">
         <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicon.ico">
+
+        <!-- Loads google model viewer, the tool im using too display 3D models-->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+        <!-- Loads the general use function scripts that will be used multiple times by the algorithms-->
         <script src="Js/algorithmMenu.js"></script>
         <script src="Js/interpret.js"></script>
 
         <!-- Loads in the possible algorithms that can be called-->
         <script src="Js/Algorithms/displayBohr.js"></script>
+        <script src="Js//Algorithms/structuralClass.js"></script>
+        <script src="Js/Algorithms/3DModelDisplay.js"></script>
+        <script src="Js/Algorithms/skeletal.js"></script>
+        
+        <!-- Loads the backup database -->
+        <script src="Js/Algorithms/PsuedoDatabase.js"></script>
 
         <link href="https://fonts.googleapis.com/css2?family=Asap&family=Lato&family=Montserrat&family=Space+Mono&family=Ubuntu&display=swap" rel="stylesheet">
         <title>Element Lab</title>
@@ -22,8 +34,8 @@
         <body>
             <!-- The main bulk of the website will be split into two parts, the canvas and the interface-->
             <!--The canvas-->
-            <section class = "canvasHolder">
-                <canvas id = "displayCanvas">
+            <section class="canvasHolder" id="canvasHolder">
+                <canvas id="displayCanvas"></canvas>
             </section>
 
             <section class="userMenu">
@@ -44,13 +56,19 @@
                 <section class="eOptions">
                     <h1>Element Options:</h1>
                     <br>
-                    
-                    <label for="d-Bohr">Display Bohr</label>
+
                     <input type="radio" id="d-Bohr" name="emOption" value="d-Bohr" checked="checked">
+                    <label for="d-Bohr">Display Bohr</label>
                     <br>
 
-                    <label for="d-3D">Display 3D</label>
+                    <!-- This option allows the user to pause or play the bohr model animation loop-->
+                    <input type="checkbox" id="d-Bohr-Animate" name="d-checkbox" checked="checked">
+                    <label for="d-Bohr-Animate">Play Animation</label>
+                    <br>
+
                     <input type="radio" id="d-3D" name="emOption" value="d-3D">
+                    <label for="d-3D">Display 3D</label>
+                    <br>
 
                 </section>
 
@@ -60,23 +78,25 @@
                     <h1>Molecule Options</h1>
                     <br>
 
-                    <label for="d-displayed">Displayed Formula</label>
                     <input type="radio" id="d-displayed" name="emOption" value="d-displayed">
-                    <br>
-
-                    <label for="d-bonding">Bonding Display</label>
-                    <input type="radio" id="d-bonding" name="emOption" value="d-bonding">
+                    <label for="d-displayed">Displayed Formula</label>
                     <br>
                     
-                    <label for="d-hydrocarbon">Hydrocarbon Displayed</label>
+                    <!-- 
+                    <input type="radio" id="d-bonding" name="emOption" value="d-bonding">
+                    <label for="d-bonding">Bonding Display</label>
+                    <br>
+                    
                     <input type="radio" id="d-hydrocarbon" name="emOption" value="d-hydrocarbon">
+                    <label for="d-hydrocarbon">Hydrocarbon Displayed</label>
                     <br>
+                    -->
 
-                    <label for="d-skeletal">Skeletal Formula</label>
                     <input type="radio" id="d-skeletal" name="emOption" value="d-skeletal">
+                    <label for="d-skeletal">Skeletal Formula</label>
                     <br>
 
-                </section>
+                </section>                                  
                 </form>
             </section>
         </body>

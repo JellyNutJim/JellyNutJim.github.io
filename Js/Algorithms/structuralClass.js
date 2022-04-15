@@ -54,7 +54,7 @@ function createDisplayedFormula(userInput)
                     elementCount++;
                     i = i + 1;
                 }
-            }
+            } 
 
             if (tempElementHolder == "C" || "O" || "S"){
                 uniqueElementCount++;

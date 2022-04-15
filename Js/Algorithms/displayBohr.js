@@ -188,6 +188,10 @@ function displayElement2D(){
 //The main entry point for the bohr model functions.
 function bohrMain(userInput){
     if(!checkValidElement(userInput)){
+        //Display error message to user.
+        document.getElementById("invalidDisplay").style.zIndex = "2";
+        document.getElementById("invalidDisplay").innerHTML = "Please Insert a Valid element";
+
         var error = [true, "Invalid Element"]
         return error;
     }
