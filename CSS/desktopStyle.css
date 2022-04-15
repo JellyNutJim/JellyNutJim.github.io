@@ -41,6 +41,7 @@ main{
     min-width: 700px;
 }
 
+/*The parent element of the canvas and 3D model display*/
 main .canvasHolder{
     box-sizing: content-box;
     position: relative;
@@ -60,6 +61,7 @@ model-viewer
     margin: auto auto;
 }
 
+/* The invalid element Display */
 main h3
 {
     font-family: 'Asap', sans-serif;
@@ -93,7 +95,7 @@ main .inputSubmit, .eOptions, .mOptions {
     width: 33.33%;
 }
 
-main .inputSubmit #emInput{
+main #emInput{
     border: 1px solid black;
     border-radius: 5px;
     font-size: 2vh;
@@ -104,7 +106,7 @@ main .inputSubmit #emInput{
     left: 1%;
 }
 
-main .inputSubmit #submitButton{
+main #submitButton{
     border: 1px solid black;
     border-radius: 5px;
 
@@ -120,12 +122,33 @@ main .inputSubmit #submitButton{
     cursor: pointer;
 }
 
+main #displayExplain
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+
 #submitButton:hover{
     background-color: chocolate;
     color: white;
 }
 
 #submitButton:active{
+    transform: translateY(4px);
+}
+
+#displayExplain:hover{
+    background-color: chocolate;
+    color: white;
+}
+
+#displayExplain:active{
     transform: translateY(4px);
 }
 

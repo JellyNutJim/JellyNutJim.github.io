@@ -7,6 +7,8 @@
 main{
     background-color: hsla(177, 61%, 29%, 1);
 }
+
+/*The parent element of the canvas and 3D model display*/
 main .canvasHolder{
     background-color: hsla(188, 36%, 90%, 1);
     width: 100vw;
@@ -14,11 +16,25 @@ main .canvasHolder{
     border: black solid 5px;
 }
 
+/* The 3D model display*/
 model-viewer
 {
     width: 85%;
     height: 100%;
     margin: auto auto;
+}
+
+/* The invalid element Display */
+main h3
+{
+    font-family: 'Asap', sans-serif;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: -1;
 }
 
 main .userMenu{
@@ -30,10 +46,10 @@ main .userMenu{
     font-family: 'Asap', sans-serif;
 }
 
-main .inputSubmit, .eOptions, .mOptions {
+main .inputSubmit, .eOptions {
     /*border: 5px solid black; */
     float: left;
-    width: 33.33%;
+    width: 50%;
 }
 
 main .inputSubmit #emInput{

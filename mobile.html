@@ -35,6 +35,7 @@
             <!-- The main bulk of the website will be split into two parts, the canvas and the interface-->
             <!--The canvas-->
             <section class="canvasHolder" id="canvasHolder">
+                <h3 id="invalidDisplay">Please Insert a Valid element</h3>
                 <canvas id="displayCanvas"></canvas>
             </section>
 
@@ -70,11 +71,10 @@
                     <label for="d-3D">Display 3D</label>
                     <br>
 
-                </section>
+                    <!-- User options for displaying molecules -->
+                    <!-- Will include explanations.-->
 
-                <!-- User options for displaying molecules -->
-                <!-- Will include explanations.-->
-                <section class="mOptions">
+                    <br>
                     <h1>Molecule Options</h1>
                     <br>
 
@@ -82,21 +82,12 @@
                     <label for="d-displayed">Displayed Formula</label>
                     <br>
                     
-                    <!-- 
-                    <input type="radio" id="d-bonding" name="emOption" value="d-bonding">
-                    <label for="d-bonding">Bonding Display</label>
-                    <br>
-                    
-                    <input type="radio" id="d-hydrocarbon" name="emOption" value="d-hydrocarbon">
-                    <label for="d-hydrocarbon">Hydrocarbon Displayed</label>
-                    <br>
-                    -->
-
                     <input type="radio" id="d-skeletal" name="emOption" value="d-skeletal">
                     <label for="d-skeletal">Skeletal Formula</label>
                     <br>
 
-                </section>                                  
+                </section>
+                       
                 </form>
             </section>
         </body>
