@@ -20,6 +20,47 @@ header h1{
     font-size: 7vh;
 }
 
+/* Info ------------------------------------------------------ */
+
+.eInfo
+{
+    background-color: ivory;
+    border: 5px solid black;
+    border-radius: 10px;
+    position: absolute;
+    display: none;
+
+    margin-top: 5%;
+    margin-left: 5%;
+
+    width: 15%;
+    height: 30%;
+    z-index: 2;
+
+    font-family: 'Asap', sans-serif;
+
+
+}
+
+.mInfo
+{
+    background-color: ivory;
+    border: 5px solid black;
+    border-radius: 10px;
+    position: absolute;
+    display: none;
+
+    margin-top: 5%;
+    margin-left: 80%;
+
+    width: 15%;
+    height: 30%;
+    z-index: 2;
+
+    font-family: 'Asap', sans-serif;
+}
+
+
 
 /* Main ------------------------------------------------------ */
 

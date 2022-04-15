@@ -51,6 +51,97 @@ function checkSelectedTrue(currentActiveOption){
     }
 }
 
+var bohrDisplayActive = false;
+var dimensionalDisplayActive = false;
+var displayedDisplayActive = false;
+var skeletalDisplayActive = false;
+
+//Displays element algorithm info/instructions.
+function displayElementInfo(option)
+{
+    //Define info panel HTML elements.
+    var infoPanel = document.getElementById("eInfo");
+    var infoHeading = document.getElementById("eHeading");
+    var infoContents = document.getElementById("eContents");
+
+    //Display the panel.
+    infoPanel.style.display = "block";
+
+    switch(option)
+    {
+        case "Bohr":
+            if (bohrDisplayActive)
+            {
+                infoPanel.style.display = "none";
+                bohrDisplayActive = false;
+            } 
+            else
+            {
+                bohrDisplayActive = true;
+                infoHeading.innerHTML = "Bohr's model display"
+                infoContents.innerHTML = "The Bohr's model algorithm accepts any periodic element as an input. <br><br>Enter your chosen element and click submit to see it displayed as a Bohr's model."
+            }
+            break;
+        case "3D":
+            if (dimensionalDisplayActive)
+            {
+                infoPanel.style.display = "none";
+                dimensionalDisplayActive = false;
+            }
+            else
+            {
+                dimensionalDisplayActive = true;
+                infoHeading.innerHTML = "3D model display"
+                infoContents.innerHTML = "The 3D model display accepts the first group of periodic elements as an input. <br>Enter your chosen element and click submit to see it displayed. Entering any other element will result in an 'f' electron space being displayed."
+            }
+
+            break;
+    }
+}
+
+//Displays molecule algorithm info/instructions.
+function displayMoleculeInfo(option)
+{
+    //Define info panel HTML elements.
+    var infoPanel = document.getElementById("mInfo");
+    var infoHeading = document.getElementById("mHeading");
+    var infoContents = document.getElementById("mContents");
+
+    //Display the panel.
+    infoPanel.style.display = "block";
+
+    switch(option)
+    {
+        case "displayed":
+            if (displayedDisplayActive)
+            {
+                infoPanel.style.display = "none";
+                displayedDisplayActive = false;
+            } 
+            else
+            {
+                displayedDisplayActive = true;
+                infoHeading.innerHTML = "Displayed Formula Display";
+                infoContents.innerHTML = "The displayed algorithm accepts a hydrocarbon chain as an input. This input should be entered in structural formula. Example Input: 'CH3CH2CH3'. Enter your chosen molecule and click submit to see it displayed.";
+            }
+            break;
+        case "skeletal":
+            if (skeletalDisplayActive)
+            {
+                infoPanel.style.display = "none";
+                skeletalDisplayActive = false;
+            }
+            else
+            {
+                skeletalDisplayActive = true;
+                infoHeading.innerHTML = "Skeletal Formula Display"
+                infoContents.innerHTML = "The skeletal algorithm accepts a hydrocarbon chain as an input. This input should be entered in structural formula. <br>Example Input: 'CH3CH2CH3'<br>Enter your chosen molecule and click submit to see it displayed.";
+            }
+
+            break;
+    }
+}
+
 //Clears the canvas upon being called.
 function clearCanvas()
 {

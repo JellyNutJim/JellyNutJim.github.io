@@ -35,7 +35,20 @@
         <header>
             <h1>Element Lab</h1>
         </header>
-            
+        
+        <!-- The following section refers to the function instructions-->
+        <section class="eInfo" id="eInfo">
+            <h2 id="eHeading">placeholder</h2>
+            <p id="eContents">placeholder</p>
+        </section>
+
+        <section class = "mInfo" id="mInfo">
+            <h2 id="mHeading">Bohr's model algorithm</h2>
+            <p id="mContents">This algorithm</p>
+        </section>
+
+
+
         <main>
             <!-- The main bulk of the website will be split into two parts, the canvas and the interface-->
             <!--The canvas-->
@@ -67,7 +80,7 @@
 
                     <input type="radio" id="d-Bohr" name="emOption" value="d-Bohr" checked="checked">
                     <label for="d-Bohr">Display Bohr</label>
-                    <button type="button" id="displayExplain" onclick="">?</button>
+                    <button type="button" id="displayExplain" onclick="displayElementInfo('Bohr')">?</button>
                     <br>
 
                     <!-- This option allows the user to pause or play the bohr model animation loop-->
@@ -77,13 +90,13 @@
 
                     <input type="radio" id="d-3D" name="emOption" value="d-3D">
                     <label for="d-3D">Display 3D</label>
-                    <button type="button" id="displayExplain" onclick="">?</button>
+                    <button type="button" id="displayExplain" onclick="displayElementInfo('3D')">?</button>
                     <br>
-                    
+                    <!--
                     <label for="to-temp">How to use</label>
                     <br>
                     <button type="button" id="to-temp" onclick="return switchPage('temp.html')">Instructions</button>
-
+                    -->
                 </section>
 
                 <!-- User options for displaying molecules -->
@@ -94,10 +107,12 @@
 
                     <input type="radio" id="d-displayed" name="emOption" value="d-displayed">
                     <label for="d-displayed">Displayed Formula</label>
+                    <button type="button" id="displayExplain" onclick="displayMoleculeInfo('displayed')">?</button>
                     <br>
     
                     <input type="radio" id="d-skeletal" name="emOption" value="d-skeletal">
                     <label for="d-skeletal">Skeletal Formula</label>
+                    <button type="button" id="displayExplain" onclick="displayMoleculeInfo('skeletal')">?</button>
                     <br>
                     
                     <!-- 
