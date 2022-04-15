@@ -82,7 +82,8 @@ function clearModel()
     if (modelExists == true)
     {
         var model = document.getElementById("3DModelViewer");
-        model.Remove();
+        model.parentNode.removeChild(model);
+        modelExists = false;
     }
 }
 
@@ -102,6 +103,11 @@ function initializeDisplay(){
     var canvas = document.getElementById("displayCanvas");
     var pwidth = mainCanvas.clientWidth;
     var pheight = mainCanvas.clientHeight;
+
+    if (canvas.style.display = "none")
+    {
+        canvas.style.display = "block";
+    }
 
     canvas.setAttribute('width', pwidth);
     canvas.setAttribute('height', pheight);
