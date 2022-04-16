@@ -263,6 +263,11 @@ function drawSkeletal(carbons, carbonDataArray)
 
                     if (numOfExtra == "d")
                     {
+                        if (i == carbons - 1)
+                        {
+                            continue;
+                        }
+                        
                         if (y == 0)
                         {
                             c.moveTo(x, -5);
