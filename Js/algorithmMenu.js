@@ -92,7 +92,7 @@ function displayElementInfo(option)
             {
                 dimensionalDisplayActive = true;
                 infoHeading.innerHTML = "3D model display"
-                infoContents.innerHTML = "The 3D model display accepts the first group of periodic elements as an input. <br>Enter your chosen element and click submit to see it displayed. Entering any other element will result in an 'f' electron space being displayed."
+                infoContents.innerHTML = "The 3D model display accepts any element in the first group of the periodic table as an input. <br>Enter your chosen element and click submit to see it displayed. Entering any other element will result in an 'f' electron space being displayed."
             }
 
             break;
