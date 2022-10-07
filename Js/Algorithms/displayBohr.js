@@ -21,21 +21,21 @@ function getBohrElectronStructure(electrons){
     var counter = 1;
 
     //As the first shell difers in size to the rest, we define it first.
-    if (electrons >= 2){
+    if (electrons >= 2)
+    {
         shells[0] = 2;
         electrons -= 2;
 
         //Run through the remaining number of electrons, increasing the electrons in each shell.
-    //Max of 8 electrons per shell.
-    for (var i = 1; i < electrons + 1; i++){
-        if (i % 8 != 0){
-            shells[counter] += 1;
-        } else{
-            shells[counter] += 1;
-            counter++;
+        //Max of 8 electrons per shell.
+        for (var i = 1; i < electrons + 1; i++){
+            if (i % 8 != 0){
+                shells[counter] += 1;
+            } else{
+                shells[counter] += 1;
+                counter++;
+            }
         }
-    }
-
     } 
     else
     {

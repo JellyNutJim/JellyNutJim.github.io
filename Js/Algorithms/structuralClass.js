@@ -105,6 +105,8 @@ function reverseList(list)
     return reversed;
 }
 
+//Returns the outer shell electron configuration for a specific element
+//Bassed on the atomic number.
 function getOuterShell(atomicNumber)
 {
     var shellConfig = getBohrElectronStructure(atomicNumber);
